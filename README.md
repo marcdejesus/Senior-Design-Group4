@@ -1,6 +1,6 @@
 Unity Version: Unity 2022.3.33f1
 
-How to use/edit:
+How to use/edit IOS:
 
 1) Create a 2D Unity Mobile project.
 
