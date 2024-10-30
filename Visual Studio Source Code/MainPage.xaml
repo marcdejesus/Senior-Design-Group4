@@ -1,29 +1,70 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WellnessApp.MainPage"
-             Title="Main Page"
-             BackgroundColor="AntiqueWhite"
-             >
+             Title="Instagram Style Layout">
 
-    <StackLayout Padding="20" Spacing="10" Orientation="Vertical">
-        <Button Text="Display Available Themes" Clicked="ShowThemesClicked"/>
+    <Grid RowDefinitions="*, Auto">
+        <!-- Main content area -->
+        <ScrollView Grid.Row="0">
+            <StackLayout Padding="20" Spacing="10" Orientation="Vertical">
+                <Button Text="Display Available Themes" Clicked="ShowThemesClicked"/>
 
-        <ListView x:Name="ThemeList">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout Padding="10">
-                            <Label Text="{Binding Name}" Margin="10" HorizontalOptions="Center"/>
-                            <Label Text="{Binding Description}" Margin="10" HorizontalOptions="Center"/>
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </StackLayout>
+                <ListView x:Name="ThemeList">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Padding="10">
+                                    <Label Text="{Binding Name}" Margin="10" HorizontalOptions="Center"/>
+                                    <Label Text="{Binding Description}" Margin="10" HorizontalOptions="Center"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
 
-
-
-
+        <!-- Bottom Navigation Row -->
+        <Grid Grid.Row="1"
+              BackgroundColor="White"
+              Padding="5"
+              RowDefinitions="Auto"
+              ColumnDefinitions="*,*,*,*,*">
+              
+            <!-- Home Button -->
+            <Button Text="Home"
+                    Grid.Column="0"
+                    ImageSource="home_icon.png"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+                    
+            <!-- Search Button -->
+            <Button Text="Search"
+                    Grid.Column="1"
+                    ImageSource="search_icon.png"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+                    
+            <!-- Add Goal Button -->
+            <Button Text="Add"
+                    Grid.Column="2"
+                    ImageSource="add_icon.png"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+                    
+            <!-- Activity Button -->
+            <Button Text="Activity"
+                    Grid.Column="3"
+                    ImageSource="activity_icon.png"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+                    
+            <!-- Profile Button -->
+            <Button Text="Profile"
+                    Grid.Column="4"
+                    ImageSource="profile_icon.png"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+        </Grid>
+    </Grid>
 </ContentPage>
