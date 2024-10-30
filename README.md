@@ -22,7 +22,7 @@ Without further ado, the packages are:
    xunit.runner.visualstudio (ver 2.5.3) by xunit
    
 
-Now that you have installed the necessary packages, straight up delete all of the .cs and .xaml files from the solution explorer, don't worry, we'll be replacing them shortly!
+Now that you have installed the necessary packages, straight up delete all of the .cs and .xaml files (Not the Propteries, Platforms, or Resources folders) from the solution explorer, don't worry, we'll be replacing them shortly!
 
 Next, copy in the .cs files from the 'Visual Studio Source Code' folder in the GitHub repository (only the .cs files, not the .xaml.cs files, mind you).
 
