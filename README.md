@@ -3,7 +3,7 @@ Here's how you do that!
 
 First, you'll want your own local project where you can conduct your work. Visual Studio projects are very large, so we can't upload the entire project folder to GitHub.
 
-You'll need to create a new .NET Maui App, name it 'WellnessApp' and select a directory to place it in, don't place it in the GitHub Repository Folder.
+You'll need to create a new .NET Maui App, name it 'WellnessApp' (EXACTLY 'WellnessApp') and select a directory to place it in, don't place it in the GitHub Repository Folder.
 
 Select '.NET 8.0 (Long Term Support)' for the framework.
 
