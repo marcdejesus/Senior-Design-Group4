@@ -20,6 +20,8 @@ Without further ado, the packages are:
    xunit (ver 2.5.3 )by xunit
 
    xunit.runner.visualstudio (ver 2.5.3) by xunit
+
+   moq by moq (make sure this one is loaded into the unit testing project as well)
    
 
 Now that you have installed the necessary packages, straight up delete all of the .cs and .xaml files from the solution explorer, don't worry, we'll be replacing them shortly!
