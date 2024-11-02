@@ -15,11 +15,17 @@ namespace WellnessAppTest
         public void GetCategoryBreakdown_Test()
         {
             // Arrange
-
+            List<Category> categories = GetSampleCategories();
 
             // Act
+            Function function = new Function();
+            string actual = function.GetCategoryBreakDown(categories);
 
             //Assert
+            string expected = "The goal categories you have selected to pursue are some Fitness, some Instrument, a few Studying, and one Language.";
+
+            Assert.NotNull(actual);
+            Assert.Equal(expected, actual);
 
         }
 
@@ -34,27 +40,75 @@ namespace WellnessAppTest
         //    Assert.Equal(actual, expected);
         //}
 
-        private List<Theme> GetSampleThemes()
+        private List<Category> GetSampleCategories()
         {
-            List<Theme> output = new List<Theme>
+            List<Category> output = new List<Category>
             {
-                new Theme
+                new Category
                 {
-                    ThemeId = 1,
-                    Name = "Fitness",
-                    Description = "Fitness description"
+                    CategoryId = 1,
+                    Name = "Strength Training",
+                    Description = "description",
+                    ParentTheme = "Fitness"
                 },
-                new Theme
+                new Category
                 {
-                    ThemeId = 2,
-                    Name = "Studying",
-                    Description = "Studying description"
+                    CategoryId = 2,
+                    Name = "Flexibility and Mobility",
+                    Description = "description",
+                    ParentTheme = "Fitness"
                 },
-                new Theme
+                new Category
                 {
-                    ThemeId = 3,
-                    Name = "Languages",
-                    Description = "Languages description"
+                    CategoryId = 3,
+                    Name = "Endurance and Stamina",
+                    Description = "description",
+                    ParentTheme = "Fitness"
+                },
+
+                new Category
+                {
+                    CategoryId = 4,
+                    Name = "Practice and Routine",
+                    Description = "description",
+                    ParentTheme = "Instrument"
+                },
+                new Category
+                {
+                    CategoryId = 5,
+                    Name = "Composition and Creativity",
+                    Description = "description",
+                    ParentTheme = "Instrument"
+                },
+                new Category
+                {
+                    CategoryId = 6,
+                    Name = "Technique and Fundamentals",
+                    Description = "description",
+                    ParentTheme = "Instrument"
+                },
+
+                new Category
+                {
+                    CategoryId = 7,
+                    Name = "Science and Math",
+                    Description = "description",
+                    ParentTheme = "Studying"
+                },
+                new Category
+                {
+                    CategoryId = 8,
+                    Name = "Listening and Speaking",
+                    Description = "description",
+                    ParentTheme = "Studying"
+                },
+
+                new Category
+                {
+                    CategoryId = 9,
+                    Name = "Technique and Fundamentals",
+                    Description = "description",
+                    ParentTheme = "Language"
                 }
             };
 
