@@ -8,9 +8,14 @@ namespace WellnessApp
 {
     public class Function
     {
-        public int AddInts(int x, int y)
+        //public int AddInts(int x, int y)
+        //{
+        //    return x + y;
+        //}
+
+        public String GetThemeBreakDown() 
         {
-            return x + y;
+            return "";
         }
     }
 }

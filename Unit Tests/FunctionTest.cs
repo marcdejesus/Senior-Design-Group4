@@ -11,16 +11,16 @@ namespace WellnessAppTest
     public class FunctionTest 
     {
 
-        [Fact]
-        public async void SelectAll_Test()
-        {
-            Function fun = new Function();
+        //[Fact]
+        //public async void AddInts_Test()
+        //{
+        //    Function fun = new Function();
 
-            var expected = 5;
-            var actual = fun.AddInts(2, 3);
+        //    var expected = 5;
+        //    var actual = fun.AddInts(2, 3);
 
-            Assert.Equal(actual, expected);
-        }
+        //    Assert.Equal(actual, expected);
+        //}
 
         private List<Theme> GetSampleThemes()
         {
