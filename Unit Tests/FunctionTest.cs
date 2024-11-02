@@ -11,6 +11,18 @@ namespace WellnessAppTest
     public class FunctionTest 
     {
 
+        [Fact]
+        public void GetCategoryBreakdown_Test()
+        {
+            // Arrange
+
+
+            // Act
+
+            //Assert
+
+        }
+
         //[Fact]
         //public async void AddInts_Test()
         //{

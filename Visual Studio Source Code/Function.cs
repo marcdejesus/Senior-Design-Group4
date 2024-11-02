@@ -13,7 +13,7 @@ namespace WellnessApp
         //    return x + y;
         //}
 
-        public String GetThemeBreakDown() 
+        public string GetCategoryBreakDown() 
         {
             return "";
         }
