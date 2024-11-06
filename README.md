@@ -44,6 +44,7 @@ There were a number of configurations needed to make the WellnessApp project com
 
 Instead, just copy from the *Projects* folder the .txt file of the project you are working on (either WellnessApp or WellnessAppTest) and copy that code into the .csproj files for those projects (you can access those by clicking on the project name in the solution explorer)
 
+Copy in the Database folder as a whole.  
 
 Once you have all of the files copied over, you may see some red squiggly lines over some elements in the code, maybe underneath an 'InitializeComponent()' method call? Perchance.
 

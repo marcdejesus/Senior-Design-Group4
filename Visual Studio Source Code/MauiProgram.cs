@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
+using WellnessApp.Database.Repository;
+using WellnessApp.Database.Services;
 
 namespace WellnessApp
 {
@@ -15,8 +17,14 @@ namespace WellnessApp
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
+            string dbPath = Path.Combine(FileSystem.AppDataDirectory, "AppDatabase.db");
+            builder.Services.AddSingleton<DatabaseService>(_ => new DatabaseService(dbPath));
+
+            
+
             builder.Services.AddSingleton<ThemeRepository>();
-            builder.Services.AddTransient<MainPage>();    
+            builder.Services.AddTransient<MainPage>();
+            
 
 #if DEBUG
     		builder.Logging.AddDebug();
