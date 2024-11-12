@@ -17,5 +17,9 @@ namespace WellnessApp.Database.Items
         public string Description { get; set; }
 
         public int ParentCatId { get; set; }
+
+        public string Status { get; set; }
+
+        public double Days { get; set; }
     }
 }

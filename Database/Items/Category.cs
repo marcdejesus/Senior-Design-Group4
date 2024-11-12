@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SQLite;
 
-namespace WellnessApp.Database.Items
+namespace WellnessApp
 {
     [SQLite.Table("category")]
     public class Category
@@ -18,6 +18,10 @@ namespace WellnessApp.Database.Items
 
         public string Description { get; set; }
 
-        public string ParentTheme { get; set; }
+        public int ParentThemeId { get; set; }
+
+        public string Status { get; set; }
+
+        public double Days { get; set; }
     }
 }

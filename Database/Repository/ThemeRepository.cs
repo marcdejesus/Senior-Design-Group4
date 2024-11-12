@@ -36,11 +36,42 @@ namespace WellnessApp.Database.Repository
 
         public async Task Update(Theme theme)
         {
-            await _database.Update(theme);
+            await _database.UpdateTheme(theme);
         }
         public async Task Delete(Theme theme)
         {
-            await _database.Delete(theme);
+            await _database.DeleteTheme(theme);
         }
+
+        //public async Task AddThemeToActive(Theme theme)
+        //{
+        //    int primKey = theme.ThemeId;
+
+        //    Theme updatedTheme = new Theme
+        //    {
+        //        ThemeId = primKey,
+        //        Name = theme.Name,
+        //        Description = theme.Description,
+        //        Status = "Active",
+        //        Days = theme.Days
+        //    };
+        //    await _database.UpdateTheme(updatedTheme);
+
+        //    List<Category> childCategories = await _database.GetCategoryByParentId(primKey);
+
+        //    foreach (Category category in childCategories)
+        //    {
+        //        Category updatedCategory = new Category
+        //        {
+        //            CategoryId = category.CategoryId,
+        //            Name = category.Name,
+        //            Description = category.Description,
+        //            ParentThemeId = category.ParentThemeId,
+        //            Status = "Active",
+        //            Days = category.Days
+        //        };
+        //        await _database.UpdateCategory(updatedCategory);
+        //    }
+        //}
     }
 }

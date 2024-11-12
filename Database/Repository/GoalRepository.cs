@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,10 +10,10 @@ using WellnessApp.Database.Services;
 
 namespace WellnessApp.Database.Repository
 {
-    public class GoalRepositroy
+    public class GoalRepository
     {
         private readonly DatabaseService _database;
-        public GoalRepositroy(DatabaseService databaseService)
+        public GoalRepository(DatabaseService databaseService)
         {
             _database = databaseService;
         }

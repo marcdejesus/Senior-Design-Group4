@@ -11,16 +11,17 @@ namespace WellnessApp
 {
     public partial class MainPage : ContentPage
     {
-
         private readonly ThemeRepository _themeRepository;
+        private readonly CategoryRepository _categoryRepository;
+        private readonly GoalRepository _goalRepository;
 
-        public MainPage(ThemeRepository themeRepository)
+        public MainPage(ThemeRepository themeRepository, CategoryRepository categoryRepository, GoalRepository goalRepository)
         {
             _themeRepository = themeRepository;
+            _categoryRepository = categoryRepository;
+            _goalRepository = goalRepository;
             
             InitializeComponent();
-             
-
         }
 
 

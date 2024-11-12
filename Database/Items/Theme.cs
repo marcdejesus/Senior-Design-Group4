@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WellnessApp.Database.Items
+namespace WellnessApp
 {
     [Table("theme")]
     public class Theme
@@ -16,6 +16,10 @@ namespace WellnessApp.Database.Items
         public string Name { get; set; }
 
         public string Description { get; set; }
+
+        public string Status { get; set; }
+
+        public double Days { get; set; }
 
     }
 }
