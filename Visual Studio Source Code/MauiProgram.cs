@@ -21,9 +21,9 @@ namespace WellnessApp
 
             builder.Services.AddSingleton<DatabaseService>(_ => new DatabaseService(dbPath));
 
-            builder.Services.AddSingleton<ThemeRepository>();
-            builder.Services.AddSingleton<CategoryRepository>();
-            builder.Services.AddSingleton<GoalRepository>();
+            //builder.Services.AddSingleton<ThemeRepository>();
+            //builder.Services.AddSingleton<CategoryRepository>();
+            //builder.Services.AddSingleton<GoalRepository>();
 
             builder.Services.AddTransient<MainPage>();
             

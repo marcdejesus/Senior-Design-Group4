@@ -11,15 +11,22 @@ namespace WellnessApp
 {
     public partial class MainPage : ContentPage
     {
-        private readonly ThemeRepository _themeRepository;
-        private readonly CategoryRepository _categoryRepository;
-        private readonly GoalRepository _goalRepository;
+        //private readonly ThemeRepository _themeRepository;
+        //private readonly CategoryRepository _categoryRepository;
+        //private readonly GoalRepository _goalRepository;
+        private readonly DatabaseService _databaseService;
 
-        public MainPage(ThemeRepository themeRepository, CategoryRepository categoryRepository, GoalRepository goalRepository)
+        public MainPage(
+            //ThemeRepository themeRepository, 
+            //CategoryRepository categoryRepository, 
+            //GoalRepository goalRepository, 
+            DatabaseService databaseService)
         {
-            _themeRepository = themeRepository;
-            _categoryRepository = categoryRepository;
-            _goalRepository = goalRepository;
+            //_themeRepository = themeRepository;
+            //_categoryRepository = categoryRepository;
+            //_goalRepository = goalRepository;
+
+            _databaseService = databaseService;
             
             InitializeComponent();
         }
@@ -32,7 +39,7 @@ namespace WellnessApp
             try
             {
                 // Get themes asynchronously
-                List<Theme> themes = await _themeRepository.GetThemes();
+                List<Theme> themes = await _databaseService.GetThemes();
 
                 // Check if themes are null or empty
                 if (themes == null || themes.Count == 0)
