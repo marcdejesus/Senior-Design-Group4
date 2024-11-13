@@ -21,5 +21,9 @@ namespace WellnessApp.Database.Items
         public string Status { get; set; }
 
         public double Days { get; set; }
+
+        public string StartDate {  get; set; }
+
+        public string EndDate { get; set; }
     }
 }
