@@ -31,5 +31,8 @@
         Title="GoalPage"
         ContentTemplate="{DataTemplate local:GoalPage}"
         Route="GoalPage"/>
-
+    <ShellContent
+        Title="CompletedGoalPage"
+        ContentTemplate="{DataTemplate local:CompletedGoalPage}"
+        Route="CompletedGoalPage"/>
 </Shell>

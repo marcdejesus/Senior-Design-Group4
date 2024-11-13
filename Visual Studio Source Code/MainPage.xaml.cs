@@ -65,6 +65,11 @@ namespace WellnessApp
         {
             await Shell.Current.GoToAsync("//GoalPage");
         }
+
+        private async void OnCompletedButtonClicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("//CompletedGoalPage");
+        }
     }
 
 }
