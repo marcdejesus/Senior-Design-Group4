@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Syncfusion.Maui.Calendar;
 
 namespace WellnessApp
 {
@@ -8,6 +9,8 @@ namespace WellnessApp
         public SearchPage()
         {
             InitializeComponent();
+            SfCalendar calendar = new SfCalendar();
+            this.Content = calendar;
         }
 
         // Navigation button click handlers
@@ -16,7 +19,7 @@ namespace WellnessApp
             await Shell.Current.GoToAsync("//MainPage"); // Navigates to Home
         }
 
-        private async void OnSearchButtonClicked(object sender, EventArgs e)
+        private async void OnCalendarButtonClicked(object sender, EventArgs e)
         {
             await Shell.Current.GoToAsync("//SearchPage");
         }
@@ -35,7 +38,6 @@ namespace WellnessApp
         {
             await Shell.Current.GoToAsync("//ProfilePage");
         }
-
     }
 
 }

@@ -16,11 +16,11 @@
         </ScrollView>
 
         <!-- Bottom Navigation Row -->
-        <Grid Grid.Row="1"
-              BackgroundColor="White"
+        <Grid Grid.Row="2"
+              BackgroundColor="LightGrey"
               Padding="5"
               RowDefinitions="Auto"
-              ColumnDefinitions="*,*,*,*,*">
+              ColumnDefinitions="*,*,*,*">
               
             <!-- Main/Home Button -->
             <Button Text="Home"
@@ -32,28 +32,19 @@
                     VerticalOptions="Center"/>
                     
             <!-- Search Button -->
-            <Button Text="Search"
-                    x:Name="SearchButton"
-                    Clicked="OnSearchButtonClicked"
+            <Button Text="Calendar"
+                    x:Name="CalendarButton"
+                    Clicked="OnCalendarButtonClicked"
                     Grid.Column="1"
                     ImageSource="search_icon.png"
                     HorizontalOptions="Center"
                     VerticalOptions="Center"/>
                     
-            <!-- Add Goal Button -->
-            <Button Text="Add"
-                    x:Name="AddButton"
-                    Clicked="OnAddButtonClicked"
-                    Grid.Column="2"
-                    ImageSource="add_icon.png"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"/>
-                    
             <!-- Activity Button -->
-            <Button Text="Activity"
-                    x:Name="ActivityButton"
+            <Button Text="Explore"
+                    x:Name="ExploreButton"
                     Clicked="OnActivityButtonClicked"
-                    Grid.Column="3"
+                    Grid.Column="2"
                     ImageSource="activity_icon.png"
                     HorizontalOptions="Center"
                     VerticalOptions="Center"/>
@@ -62,7 +53,7 @@
             <Button Text="Profile"
                     x:Name="ProfileButton"
                     Clicked="OnProfileButtonClicked"
-                    Grid.Column="4"
+                    Grid.Column="3"
                     ImageSource="profile_icon.png"
                     HorizontalOptions="Center"
                     VerticalOptions="Center"/>

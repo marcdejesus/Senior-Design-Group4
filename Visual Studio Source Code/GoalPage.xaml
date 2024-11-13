@@ -1,17 +1,21 @@
 ﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="WellnessApp.ActivityPage"
-             Title="Activity Page">
+             x:Class="WellnessApp.GoalPage"
+             Title="Goal Page">
 
     <Grid RowDefinitions="*, Auto">
         <!-- Main content area -->
         <ScrollView Grid.Row="0">
             <StackLayout Padding="10">
                 <!-- Placeholder for main content like a feed -->
-                <Label Text="Activity Page"
+                <Label Text="Goal"
                        FontSize="Large"
                        HorizontalOptions="Center"
-                       VerticalOptions="CenterAndExpand"/>
+                       VerticalOptions="StartAndExpand"/>
+                <Label Text="This page will be built to fill with each task variable"
+                       FontSize="Medium"
+                       HorizontalOptions="Center"
+                       VerticalOptions="StartAndExpand"/>
             </StackLayout>
         </ScrollView>
 

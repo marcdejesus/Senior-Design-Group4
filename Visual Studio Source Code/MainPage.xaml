@@ -8,6 +8,10 @@
         <ScrollView Grid.Row="0">
             <StackLayout Padding="20" Spacing="10" Orientation="Vertical">
                 <Button Text="Display Available Themes" Clicked="ShowThemesClicked"/>
+                <Button Text="Sample Goal" Clicked="OnGoalButtonClicked"/>
+                <Button Text="Sample Goal" Clicked="OnGoalButtonClicked"/>
+                <Button Text="Sample Goal" Clicked="OnGoalButtonClicked"/>
+                <Button Text="Add New" Clicked="OnAddButtonClicked"/>
 
                 <ListView x:Name="ThemeList">
                     <ListView.ItemTemplate>
@@ -26,10 +30,10 @@
 
         <!-- Bottom Navigation Row -->
         <Grid Grid.Row="1"
-              BackgroundColor="White"
+              BackgroundColor="LightGrey"
               Padding="5"
               RowDefinitions="Auto"
-              ColumnDefinitions="*,*,*,*,*">
+              ColumnDefinitions="*,*,*,*">
               
             <!-- Main/Home Button -->
             <Button Text="Home"
@@ -40,21 +44,12 @@
                     HorizontalOptions="Center"
                     VerticalOptions="Center"/>
                     
-            <!-- Search Button -->
-            <Button Text="Search"
-                    x:Name="SearchButton"
-                    Clicked="OnSearchButtonClicked"
+            <!-- Calendar Button -->
+            <Button Text="Calendar"
+                    x:Name="CalendarButton"
+                    Clicked="OnCalendarButtonClicked"
                     Grid.Column="1"
                     ImageSource="search_icon.png"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"/>
-                    
-            <!-- Add Goal Button -->
-            <Button Text="Add"
-                    x:Name="AddButton"
-                    Clicked="OnAddButtonClicked"
-                    Grid.Column="2"
-                    ImageSource="add_icon.png"
                     HorizontalOptions="Center"
                     VerticalOptions="Center"/>
                     
@@ -62,7 +57,7 @@
             <Button Text="Activity"
                     x:Name="ActivityButton"
                     Clicked="OnActivityButtonClicked"
-                    Grid.Column="3"
+                    Grid.Column="2"
                     ImageSource="activity_icon.png"
                     HorizontalOptions="Center"
                     VerticalOptions="Center"/>
@@ -71,7 +66,7 @@
             <Button Text="Profile"
                     x:Name="ProfileButton"
                     Clicked="OnProfileButtonClicked"
-                    Grid.Column="4"
+                    Grid.Column="3"
                     ImageSource="profile_icon.png"
                     HorizontalOptions="Center"
                     VerticalOptions="Center"/>

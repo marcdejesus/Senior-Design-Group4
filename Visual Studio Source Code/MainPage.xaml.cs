@@ -41,7 +41,7 @@ namespace WellnessApp
             await Shell.Current.GoToAsync("//MainPage"); // Navigates to Home
         }
 
-        private async void OnSearchButtonClicked(object sender, EventArgs e)
+        private async void OnCalendarButtonClicked(object sender, EventArgs e)
         {
             await Shell.Current.GoToAsync("//SearchPage");
         }
@@ -59,6 +59,11 @@ namespace WellnessApp
         private async void OnProfileButtonClicked(object sender, EventArgs e)
         {
             await Shell.Current.GoToAsync("//ProfilePage");
+        }
+
+        private async void OnGoalButtonClicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("//GoalPage");
         }
     }
 

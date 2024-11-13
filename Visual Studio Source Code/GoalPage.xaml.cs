@@ -2,10 +2,10 @@
 
 namespace WellnessApp
 {
-    public partial class ProfilePage : ContentPage
+    public partial class GoalPage : ContentPage
     {
 
-        public ProfilePage()
+        public GoalPage()
         {
             InitializeComponent();
         }

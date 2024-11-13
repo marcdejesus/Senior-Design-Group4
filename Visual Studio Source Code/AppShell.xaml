@@ -27,5 +27,9 @@
         Title="ProfilePage"
         ContentTemplate="{DataTemplate local:ProfilePage}"
         Route="ProfilePage"/>
+    <ShellContent
+        Title="GoalPage"
+        ContentTemplate="{DataTemplate local:GoalPage}"
+        Route="GoalPage"/>
 
 </Shell>
