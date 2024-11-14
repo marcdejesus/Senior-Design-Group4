@@ -47,7 +47,7 @@
             <!-- Activity Button -->
             <Button Text="Explore"
                     x:Name="ExploreButton"
-                    Clicked="OnActivityButtonClicked"
+                    Clicked="OnExploreButtonClicked"
                     Grid.Column="2"
                     ImageSource="activity_icon.png"
                     HorizontalOptions="Center"

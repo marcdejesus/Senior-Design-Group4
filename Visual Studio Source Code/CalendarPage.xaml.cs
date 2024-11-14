@@ -3,10 +3,10 @@ using Syncfusion.Maui.Calendar;
 
 namespace WellnessApp
 {
-    public partial class SearchPage : ContentPage
+    public partial class CalendarPage : ContentPage
     {
 
-        public SearchPage()
+        public CalendarPage()
         {
             InitializeComponent();
             SfCalendar calendar = new SfCalendar();
@@ -21,7 +21,7 @@ namespace WellnessApp
 
         private async void OnCalendarButtonClicked(object sender, EventArgs e)
         {
-            await Shell.Current.GoToAsync("//SearchPage");
+            await Shell.Current.GoToAsync("//CalendarPage");
         }
 
         private async void OnAddButtonClicked(object sender, EventArgs e)
@@ -29,9 +29,9 @@ namespace WellnessApp
             await Shell.Current.GoToAsync("//AddPage");
         }
 
-        private async void OnActivityButtonClicked(object sender, EventArgs e)
+        private async void OnExploreButtonClicked(object sender, EventArgs e)
         {
-            await Shell.Current.GoToAsync("//ActivityPage");
+            await Shell.Current.GoToAsync("//ExplorePage");
         }
 
         private async void OnProfileButtonClicked(object sender, EventArgs e)

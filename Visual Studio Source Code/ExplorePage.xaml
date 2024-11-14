@@ -1,7 +1,7 @@
 ﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="WellnessApp.ActivityPage"
-             Title="Activity Page">
+             x:Class="WellnessApp.ExplorePage"
+             Title="Explore Page">
 
     <Grid RowDefinitions="*, Auto">
         <!-- Main content area -->
@@ -43,7 +43,7 @@
             <!-- Activity Button -->
             <Button Text="Explore"
                     x:Name="ExploreButton"
-                    Clicked="OnActivityButtonClicked"
+                    Clicked="OnExploreButtonClicked"
                     Grid.Column="2"
                     ImageSource="activity_icon.png"
                     HorizontalOptions="Center"

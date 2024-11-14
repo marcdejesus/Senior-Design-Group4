@@ -12,17 +12,17 @@
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
     <ShellContent
-        Title="SearchPage"
-        ContentTemplate="{DataTemplate local:SearchPage}"
-        Route="SearchPage"/>
+        Title="CalendarPage"
+        ContentTemplate="{DataTemplate local:CalendarPage}"
+        Route="CalendarPage"/>
     <ShellContent
         Title="AddPage"
         ContentTemplate="{DataTemplate local:AddPage}"
         Route="AddPage"/>
     <ShellContent
-        Title="ActivityPage"
-        ContentTemplate="{DataTemplate local:ActivityPage}"
-        Route="ActivityPage"/>
+        Title="ExplorePage"
+        ContentTemplate="{DataTemplate local:ExplorePage}"
+        Route="ExplorePage"/>
     <ShellContent
         Title="ProfilePage"
         ContentTemplate="{DataTemplate local:ProfilePage}"
