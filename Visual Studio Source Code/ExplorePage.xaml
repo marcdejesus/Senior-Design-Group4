@@ -1,36 +1,22 @@
 ﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="WellnessApp.MainPage"
-             Title="Home Page">
+             x:Class="WellnessApp.ExplorePage"
+             Title="Explore Page">
 
     <Grid RowDefinitions="*, Auto">
         <!-- Main content area -->
         <ScrollView Grid.Row="0">
-            <StackLayout Padding="20" Spacing="10" Orientation="Vertical">
-                <Button Text="Display Available Themes" Clicked="ShowThemesClicked"/>
-                <Button Text="Sample Goal" Clicked="OnGoalButtonClicked"/>
-                <Button Text="Sample Goal" Clicked="OnGoalButtonClicked"/>
-                <Button Text="Sample Goal" Clicked="OnGoalButtonClicked"/>
-                <Button Text="Add New" Clicked="OnAddButtonClicked"/>
-                <Button Text="View Completed" Clicked="OnCompletedButtonClicked"/>
-
-                <ListView x:Name="ThemeList">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <StackLayout Padding="10">
-                                    <Label Text="{Binding Name}" Margin="10" HorizontalOptions="Center"/>
-                                    <Label Text="{Binding Description}" Margin="10" HorizontalOptions="Center"/>
-                                </StackLayout>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
+            <StackLayout Padding="10">
+                <!-- Placeholder for main content like a feed -->
+                <Label Text="Activity Page"
+                       FontSize="Large"
+                       HorizontalOptions="Center"
+                       VerticalOptions="CenterAndExpand"/>
             </StackLayout>
         </ScrollView>
 
         <!-- Bottom Navigation Row -->
-        <Grid Grid.Row="1"
+        <Grid Grid.Row="2"
               BackgroundColor="LightGrey"
               Padding="5"
               RowDefinitions="Auto"
@@ -45,7 +31,7 @@
                     HorizontalOptions="Center"
                     VerticalOptions="Center"/>
                     
-            <!-- Calendar Button -->
+            <!-- Search Button -->
             <Button Text="Calendar"
                     x:Name="CalendarButton"
                     Clicked="OnCalendarButtonClicked"
@@ -56,7 +42,7 @@
                     
             <!-- Activity Button -->
             <Button Text="Explore"
-                    x:Name="ActivityButton"
+                    x:Name="ExploreButton"
                     Clicked="OnExploreButtonClicked"
                     Grid.Column="2"
                     ImageSource="activity_icon.png"

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+﻿<?xml version="1.0" encoding="UTF-8" ?>
 <Shell
     x:Class="WellnessApp.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -8,8 +8,31 @@
     Title="WellnessApp">
 
     <ShellContent
-        Title="Home"
+        Title="MainPage"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
-
+    <ShellContent
+        Title="CalendarPage"
+        ContentTemplate="{DataTemplate local:CalendarPage}"
+        Route="CalendarPage"/>
+    <ShellContent
+        Title="AddPage"
+        ContentTemplate="{DataTemplate local:AddPage}"
+        Route="AddPage"/>
+    <ShellContent
+        Title="ExplorePage"
+        ContentTemplate="{DataTemplate local:ExplorePage}"
+        Route="ExplorePage"/>
+    <ShellContent
+        Title="ProfilePage"
+        ContentTemplate="{DataTemplate local:ProfilePage}"
+        Route="ProfilePage"/>
+    <ShellContent
+        Title="GoalPage"
+        ContentTemplate="{DataTemplate local:GoalPage}"
+        Route="GoalPage"/>
+    <ShellContent
+        Title="CompletedGoalPage"
+        ContentTemplate="{DataTemplate local:CompletedGoalPage}"
+        Route="CompletedGoalPage"/>
 </Shell>

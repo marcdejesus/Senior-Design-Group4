@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
-
+using Syncfusion.Maui.Core.Hosting;
+//using WellnessApp.Database.Repository;
+using WellnessApp.Database.Services;
 namespace WellnessApp
 {
     public static class MauiProgram
@@ -7,6 +9,8 @@ namespace WellnessApp
         public static MauiApp CreateMauiApp()
         {
             var builder = MauiApp.CreateBuilder();
+
+            builder.ConfigureSyncfusionCore();
             builder
                 .UseMauiApp<App>()
                 .ConfigureFonts(fonts =>
@@ -15,9 +19,11 @@ namespace WellnessApp
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
-            builder.Services.AddSingleton<ThemeRepository>();
-            builder.Services.AddTransient<MainPage>();    
+            string dbPath = Path.Combine(FileSystem.AppDataDirectory, "AppDatabase.db");
 
+            builder.Services.AddSingleton<DatabaseService>(_ => new DatabaseService(dbPath));
+
+            builder.Services.AddTransient<MainPage>();
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif
