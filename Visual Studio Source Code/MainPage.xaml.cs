@@ -1,38 +1,26 @@
-﻿using System.Collections.Generic;
-using WellnessApp.Database.Items;
+﻿//using WellnessApp.Database.Items;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.Maui.Controls;
-using WellnessApp.Database.Repository;
+//using WellnessApp.Database.Repository;
 using WellnessApp.Database.Services;
-
+using WellnessApp.Items;
 
 namespace WellnessApp
 {
     public partial class MainPage : ContentPage
     {
-        //private readonly ThemeRepository _themeRepository;
-        //private readonly CategoryRepository _categoryRepository;
-        //private readonly GoalRepository _goalRepository;
+
         private readonly DatabaseService _databaseService;
 
-        public MainPage(
-            //ThemeRepository themeRepository, 
-            //CategoryRepository categoryRepository, 
-            //GoalRepository goalRepository, 
-            DatabaseService databaseService)
+        public MainPage(DatabaseService databaseService)
         {
-            //_themeRepository = themeRepository;
-            //_categoryRepository = categoryRepository;
-            //_goalRepository = goalRepository;
-
             _databaseService = databaseService;
-            
+
             InitializeComponent();
+
+            //LoadThemes();
         }
-
-
-
 
         private async Task LoadThemes()
         {
@@ -45,7 +33,7 @@ namespace WellnessApp
                 if (themes == null || themes.Count == 0)
                 {
                     Console.WriteLine("No themes found.");
-                    return; 
+                    return;
                 }
 
                 // Update the UI
@@ -53,7 +41,7 @@ namespace WellnessApp
                 Console.WriteLine($"{themes.Count} themes loaded.");
             }
             catch (Exception ex)
-            {                
+            {
                 Console.WriteLine($"Error loading themes: {ex.Message}");
             }
         }
@@ -62,16 +50,50 @@ namespace WellnessApp
         {
             Console.WriteLine("Button Clicked!");
             try
-            {             
+            {
                 await LoadThemes();
             }
             catch (Exception ex)
-            {                
-                Console.WriteLine($"Error in ShowThemesClicked: {ex.Message}");               
+            {
+                Console.WriteLine($"Error in ShowThemesClicked: {ex.Message}");
             }
         }
 
+        // Navigation button click handlers
+        private async void OnHomeButtonClicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("//MainPage"); // Navigates to Home
+        }
 
+        private async void OnCalendarButtonClicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("//CalendarPage");
+        }
+
+        private async void OnAddButtonClicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("//AddPage");
+        }
+
+        private async void OnExploreButtonClicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("//ExplorePage");
+        }
+
+        private async void OnProfileButtonClicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("//ProfilePage");
+        }
+
+        private async void OnGoalButtonClicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("//GoalPage");
+        }
+
+        private async void OnCompletedButtonClicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("//CompletedGoalPage");
+        }
     }
 
 }
