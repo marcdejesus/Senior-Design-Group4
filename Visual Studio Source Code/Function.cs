@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WellnessApp.Items;
 
 namespace WellnessApp
 {
@@ -24,15 +25,15 @@ namespace WellnessApp
             int languageCount = 0;
             int wellnessCount = 0;
 
-            foreach (var category in categories) 
-            {
-                if (category.ParentTheme == "Fitness") fitnessCount++;
-                else if (category.ParentTheme == "Studying") studyingCount++;
-                else if (category.ParentTheme == "Instrument") instrumentCount++;
-                else if (category.ParentTheme == "Language") languageCount++;
-                else if (category.ParentTheme == "Wellness") wellnessCount++;
-                else continue;
-            }
+            //foreach (var category in categories) 
+            //{
+            //    if (category.ParentTheme == "Fitness") fitnessCount++;
+            //    else if (category.ParentTheme == "Studying") studyingCount++;
+            //    else if (category.ParentTheme == "Instrument") instrumentCount++;
+            //    else if (category.ParentTheme == "Language") languageCount++;
+            //    else if (category.ParentTheme == "Wellness") wellnessCount++;
+            //    else continue;
+            //}
 
             if (fitnessCount > 0) result += CategoryQuantifier(fitnessCount, totalLength) + "Fitness, ";
 

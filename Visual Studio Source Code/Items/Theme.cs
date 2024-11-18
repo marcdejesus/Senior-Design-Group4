@@ -1,23 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
+using SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SQLite;
 
-namespace WellnessApp
+namespace WellnessApp.Items
 {
-    [SQLite.Table("category")]
-    public class Category
+    [Table("theme")]
+    public class Theme
     {
         [PrimaryKey, AutoIncrement]
-        public int CategoryId { get; set; }
+        public int ThemeId { get; set; }
 
         public string Name { get; set; }
 
         public string Description { get; set; }
 
-        public string ParentTheme { get; set; }
+        public string Status { get; set; }
+
+        public double Days { get; set; }
+
     }
 }

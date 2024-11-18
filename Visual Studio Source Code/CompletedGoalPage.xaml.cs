@@ -5,57 +5,43 @@ using Microsoft.Maui.Controls;
 //using WellnessApp.Database.Repository;
 using WellnessApp.Database.Services;
 using WellnessApp.Items;
-
 namespace WellnessApp
 {
-    public partial class MainPage : ContentPage
+    public partial class CompletedGoalPage : ContentPage
     {
-
         private readonly DatabaseService _databaseService;
 
-        public MainPage(DatabaseService databaseService)
+
+        public CompletedGoalPage(DatabaseService databaseService)
         {
             _databaseService = databaseService;
 
             InitializeComponent();
 
-            LoadThemes();
+            LoadGoals();
         }
 
-        private async Task LoadThemes()
+        private async Task LoadGoals()
         {
             try
             {
                 // Get themes asynchronously
-                List<Theme> themes = await _databaseService.GetThemes();
+                List<Goal> goals = await _databaseService.GetCompletedGoals();
 
                 // Check if themes are null or empty
-                if (themes == null || themes.Count == 0)
+                if (goals == null || goals.Count == 0)
                 {
-                    Console.WriteLine("No themes found.");
+                    Console.WriteLine("No goals found.");
                     return;
                 }
 
                 // Update the UI
-                ThemeList.ItemsSource = themes;
-                Console.WriteLine($"{themes.Count} themes loaded.");
+                GoalList.ItemsSource = goals;
+                Console.WriteLine($"{goals.Count} goals loaded.");
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Error loading themes: {ex.Message}");
-            }
-        }
-
-        public async void ShowThemesClicked(object sender, EventArgs e)
-        {
-            Console.WriteLine("Button Clicked!");
-            try
-            {
-                await LoadThemes();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error in ShowThemesClicked: {ex.Message}");
             }
         }
 
@@ -85,19 +71,6 @@ namespace WellnessApp
             await Shell.Current.GoToAsync("//ProfilePage");
         }
 
-        private async void OnGoalButtonClicked(object sender, EventArgs e)
-        {
-            //var navParam = new Dictionary<string, object>
-            //{
-            //    {"_databaseService", _databaseService }
-            //};
-            await Shell.Current.GoToAsync("//GoalPage");
-        }
-
-        private async void OnCompletedButtonClicked(object sender, EventArgs e)
-        {
-            await Shell.Current.GoToAsync("//CompletedGoalPage");
-        }
     }
-
 }
+
