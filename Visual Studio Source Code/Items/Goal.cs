@@ -11,7 +11,7 @@ namespace WellnessApp.Items
     [SQLite.Table("goal")]
     public class Goal
     {
-        [PrimaryKey, AutoIncrement]
+        [PrimaryKey]
         public int GoalId { get; set; }
 
         public string Description { get; set; }

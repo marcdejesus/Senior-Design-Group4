@@ -18,6 +18,12 @@ namespace WellnessApp
 
             InitializeComponent();
 
+            //LoadGoals();
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
             LoadGoals();
         }
 

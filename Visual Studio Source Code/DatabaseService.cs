@@ -22,7 +22,6 @@ namespace WellnessApp.Database.Services
             _database.CreateTableAsync<Category>().Wait();
             _database.CreateTableAsync<Goal>().Wait();
             _ = InitializeDatabaseAsync();
-
         }
 
 
@@ -83,7 +82,10 @@ namespace WellnessApp.Database.Services
         {
             return await _database.Table<Theme>().Where(x => x.ThemeId == id).FirstOrDefaultAsync();
         }
-
+        public async Task<List<Theme>> GetInactiveThemes()
+        {
+            return await _database.Table<Theme>().Where(t => t.Status == "Inactive").ToListAsync();
+        }
         public async Task UpdateTheme(Theme theme)
         {
             await _database.UpdateAsync(theme);
@@ -116,15 +118,6 @@ namespace WellnessApp.Database.Services
 
             foreach (Category category in childCategories)
             {
-                //Category updatedCategory = new Category
-                //{
-                //    CategoryId = category.CategoryId,
-                //    Name = category.Name,
-                //    Description = category.Description,
-                //    ParentThemeId = category.ParentThemeId,
-                //    Status = "Active",
-                //    Days = category.Days
-                //};
                 await AddCategoryToActive(category);
             }
         }
@@ -141,6 +134,11 @@ namespace WellnessApp.Database.Services
         public async Task<List<Category>> GetCategoryByParentId(int parentId)
         {
             return await _database.Table<Category>().Where(t => t.ParentThemeId == parentId).ToListAsync();
+        }
+
+        public async Task<List<Category>> GetInactiveCategories()
+        {
+            return await _database.Table<Category>().Where(t => t.Status == "Inactive").ToListAsync();
         }
 
         public async Task UpdateCategory(Category category)
@@ -176,16 +174,9 @@ namespace WellnessApp.Database.Services
 
             foreach (Goal goal in childGoals)
             {
-                //Goal updatedGoal = new Goal
-                //{
-                //    GoalId = goal.GoalId,
-                //    Description = goal.Description,
-                //    ParentCatId = goal.ParentCatId,
-                //    Status = "Active",
-                //    Days = goal.Days
-                //};
                 await AddGoalToActive(goal);
             }
+
         }
 
         // Goal Methods
@@ -209,6 +200,10 @@ namespace WellnessApp.Database.Services
         public async Task<List<Goal>> GetCompletedGoals()
         {
             return await _database.Table<Goal>().Where(t => t.Status == "Completed").ToListAsync();
+        }
+        public async Task<List<Goal>> GetInactiveGoals()
+        {
+            return await _database.Table<Goal>().Where(t => t.Status == "Inactive").ToListAsync();
         }
 
         public async Task UpdateGoal(Goal goal)
@@ -247,7 +242,22 @@ namespace WellnessApp.Database.Services
                 ParentCatId = goal.ParentCatId,
                 Status = "Completed",
                 Days = goal.Days,
-                StartDate = DateTime.Now.ToString("M/d/yyyy")
+                EndDate = DateTime.Now.ToString("M/d/yyyy")
+            };
+            await UpdateGoal(updatedGoal);
+        }
+
+        public async Task AbandonGoal(Goal goal)
+        {
+            Goal updatedGoal = new Goal
+            {
+                GoalId = goal.GoalId,
+                Description = goal.Description,
+                ParentCatId = goal.ParentCatId,
+                Status = "Inactive",
+                Days = 0,
+                StartDate = null,
+                EndDate = null
             };
             await UpdateGoal(updatedGoal);
         }

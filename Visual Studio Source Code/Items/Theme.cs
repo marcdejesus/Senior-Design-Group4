@@ -10,7 +10,7 @@ namespace WellnessApp.Items
     [Table("theme")]
     public class Theme
     {
-        [PrimaryKey, AutoIncrement]
+        [PrimaryKey]
         public int ThemeId { get; set; }
 
         public string Name { get; set; }

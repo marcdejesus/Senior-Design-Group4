@@ -11,7 +11,7 @@ namespace WellnessApp.Items
     [SQLite.Table("category")]
     public class Category
     {
-        [PrimaryKey, AutoIncrement]
+        [PrimaryKey]
         public int CategoryId { get; set; }
 
         public string Name { get; set; }

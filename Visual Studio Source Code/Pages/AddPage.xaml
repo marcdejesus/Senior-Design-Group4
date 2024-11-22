@@ -12,7 +12,43 @@
                        FontSize="Large"
                        HorizontalOptions="Center"
                        VerticalOptions="CenterAndExpand"/>
-                <ListView x:Name="GoalList">
+                <Label Text="Themes"
+                        FontSize="Medium"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"/>
+                <ListView x:Name="ThemeList" ItemTapped="listView_ItemTapped_Theme">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Padding="10">
+                                    <Label Text="{Binding Name}" Margin="10" HorizontalOptions="Center"/>
+                                    <Label Text="{Binding Description}" Margin="10" HorizontalOptions="Center"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Label Text="Categories"
+                        FontSize="Medium"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"/>
+                <ListView x:Name="CategoryList" ItemTapped="listView_ItemTapped_Category">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Padding="10">
+                                    <Label Text="{Binding Name}" Margin="10" HorizontalOptions="Center"/>
+                                    <Label Text="{Binding Description}" Margin="10" HorizontalOptions="Center"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Label Text="Goals"
+                        FontSize="Medium"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"/>
+                <ListView x:Name="GoalList" ItemTapped="listView_ItemTapped_Goal">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>

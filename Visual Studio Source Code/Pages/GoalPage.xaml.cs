@@ -17,6 +17,30 @@ namespace WellnessApp
 
             InitializeComponent();
 
+            //LoadGoals();
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            LoadGoals();
+        }
+
+        private async void listView_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            var goal = (Goal)e.Item;
+            var action = await DisplayActionSheet("Make a selection", "Cancel", null, "Complete", "Abandon");
+
+            switch (action)
+            {
+                case "Complete":
+                    await _databaseService.AddGoalToCompleted(goal);
+                    break;
+                case "Abandon":
+                    await _databaseService.AbandonGoal(goal);
+                    break;
+            }
+                
             LoadGoals();
         }
 
@@ -27,12 +51,12 @@ namespace WellnessApp
                 // Get themes asynchronously
                 List<Goal> goals = await _databaseService.GetActiveGoals();
 
-                // Check if themes are null or empty
-                if (goals == null || goals.Count == 0)
-                {
-                    Console.WriteLine("No goals found.");
-                    return;
-                }
+                //Check if themes are null or empty
+                //if (goals == null || goals.Count == 0)
+                //{
+                //    Console.WriteLine("No goals found.");
+                //    return;
+                //}
 
                 // Update the UI
                 GoalList.ItemsSource = goals;
