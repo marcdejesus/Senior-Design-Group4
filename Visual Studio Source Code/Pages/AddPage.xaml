@@ -1,0 +1,106 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WellnessApp.AddPage"
+             Title="Add Page">
+
+    <Grid RowDefinitions="*, Auto">
+        <!-- Main content area -->
+        <ScrollView Grid.Row="0">
+            <StackLayout Padding="10">
+                <!-- Placeholder for main content like a feed -->
+                <Label Text="Themes"
+                        FontSize="Medium"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"/>
+                <ListView x:Name="ThemeList" ItemTapped="listView_ItemTapped_Theme">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Padding="10">
+                                    <Label Text="{Binding Name}" Margin="10" HorizontalOptions="Center"/>
+                                    <Label Text="{Binding Description}" Margin="10" HorizontalOptions="Center"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Label Text="Categories"
+                        FontSize="Medium"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"/>
+                <ListView x:Name="CategoryList" ItemTapped="listView_ItemTapped_Category">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Padding="10">
+                                    <Label Text="{Binding Name}" Margin="10" HorizontalOptions="Center"/>
+                                    <Label Text="{Binding Description}" Margin="10" HorizontalOptions="Center"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Label Text="Goals"
+                        FontSize="Medium"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"/>
+                <ListView x:Name="GoalList" ItemTapped="listView_ItemTapped_Goal">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Padding="10">
+                                    <Label Text="{Binding Name}" Margin="10" HorizontalOptions="Center"/>
+                                    <Label Text="{Binding Description}" Margin="10" HorizontalOptions="Center"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+
+        <!-- Bottom Navigation Row -->
+        <Grid Grid.Row="2"
+              BackgroundColor="LightGrey"
+              Padding="5"
+              RowDefinitions="Auto"
+              ColumnDefinitions="*,*,*,*">
+              
+            <!-- Main/Home Button -->
+            <Button Text="Home"
+                    x:Name="HomeButton"
+                    Clicked="OnHomeButtonClicked"
+                    Grid.Column="0"
+                    ImageSource="home_icon.png"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+                    
+            <!-- Search Button -->
+            <Button Text="Calendar"
+                    x:Name="CalendarButton"
+                    Clicked="OnCalendarButtonClicked"
+                    Grid.Column="1"
+                    ImageSource="search_icon.png"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+                    
+            <!-- Activity Button -->
+            <Button Text="Explore"
+                    x:Name="ExploreButton"
+                    Clicked="OnExploreButtonClicked"
+                    Grid.Column="2"
+                    ImageSource="activity_icon.png"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+                    
+            <!-- Profile Button -->
+            <Button Text="Profile"
+                    x:Name="ProfileButton"
+                    Clicked="OnProfileButtonClicked"
+                    Grid.Column="3"
+                    ImageSource="profile_icon.png"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+        </Grid>
+    </Grid>
+</ContentPage>
