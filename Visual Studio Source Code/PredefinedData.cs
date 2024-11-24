@@ -16,8 +16,8 @@ namespace WellnessApp.Database.Services
             new Theme { ThemeId = 1, Name = "Fitness", Description = "//TODO", Status = "Active"},
             new Theme { ThemeId = 2, Name = "Studying", Description = "//TODO", Status = "Inactive" },
             new Theme { ThemeId = 3, Name = "Language", Description = "//TODO", Status = "Inactive" },
-            //new Theme { ThemeId = 4, Name = "Instrument", Description = "//TODO" },
-            //new Theme { ThemeId = 5, Name = "Mental Awareness", Description = "//TODO" }
+            new Theme { ThemeId = 4, Name = "Instrument", Description = "//TODO", Status = "Active"},
+            new Theme { ThemeId = 5, Name = "Mental Awareness", Description = "//TODO", Status = "Inactive" }
         };
 
         // Predefined Category data
