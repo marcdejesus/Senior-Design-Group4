@@ -8,13 +8,24 @@
         <!-- Main content area -->
         <ScrollView Grid.Row="0">
             <StackLayout Padding="10">
-                <!-- Circular Profile Picture -->
+                <!-- Circular Profile Picture and Username -->
                 <Grid HorizontalOptions="End" VerticalOptions="Start" Padding="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="CrunchTimeStudios          "
+                           TextColor="{DynamicResource TextColor}"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Start"
+                           Grid.Column="0"
+                           Margin="10,0,0,0"/>
                     <Image x:Name="ProfileImage"
                            Source="example_pfp.webp"
                            WidthRequest="100"
                            HeightRequest="100"
-                           Aspect="AspectFill">
+                           Aspect="AspectFill"
+                           Grid.Column="1">
                         <Image.Clip>
                             <EllipseGeometry Center="50,50" RadiusX="50" RadiusY="50"/>
                         </Image.Clip>
@@ -52,7 +63,7 @@
                     VerticalOptions="Center"
                     BackgroundColor="Grey"
                     TextColor="{DynamicResource TextColor}"/>
-                    
+            
             <!-- Search Button -->
             <Button Text="Calendar"
                     x:Name="CalendarButton"
