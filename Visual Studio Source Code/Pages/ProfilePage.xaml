@@ -7,11 +7,25 @@
         <!-- Main content area -->
         <ScrollView Grid.Row="0">
             <StackLayout Padding="10">
-                <!-- Placeholder for main content like a feed -->
-                <Label Text="Profile Page"
-                       FontSize="Large"
-                       HorizontalOptions="Center"
-                       VerticalOptions="CenterAndExpand"/>
+                <!-- Circular Profile Picture -->
+                <Grid HorizontalOptions="End" VerticalOptions="Start" Padding="10">
+                    <Image x:Name="ProfileImage"
+                           Source="example_pfp.webp"
+                           WidthRequest="100"
+                           HeightRequest="100"
+                           Aspect="AspectFill">
+                        <Image.Clip>
+                            <EllipseGeometry Center="50,50" RadiusX="50" RadiusY="50"/>
+                        </Image.Clip>
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnProfileImageTapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Grid>
+
+                <!-- Main Part of Page Text Here -->
+                
+                
             </StackLayout>
         </ScrollView>
 
@@ -21,7 +35,7 @@
               Padding="5"
               RowDefinitions="Auto"
               ColumnDefinitions="*,*,*,*">
-              
+
             <!-- Main/Home Button -->
             <Button Text="Home"
                     x:Name="HomeButton"
@@ -30,7 +44,7 @@
                     ImageSource="home_icon.png"
                     HorizontalOptions="Center"
                     VerticalOptions="Center"/>
-                    
+
             <!-- Search Button -->
             <Button Text="Calendar"
                     x:Name="CalendarButton"
@@ -39,7 +53,7 @@
                     ImageSource="search_icon.png"
                     HorizontalOptions="Center"
                     VerticalOptions="Center"/>
-                    
+
             <!-- Activity Button -->
             <Button Text="Explore"
                     x:Name="ExploreButton"
@@ -48,7 +62,7 @@
                     ImageSource="activity_icon.png"
                     HorizontalOptions="Center"
                     VerticalOptions="Center"/>
-                    
+
             <!-- Profile Button -->
             <Button Text="Profile"
                     x:Name="ProfileButton"

@@ -1,19 +1,30 @@
-﻿//using WellnessApp.Database.Items;
-using System.Collections.Generic;
+﻿using Microsoft.Maui.Controls;
+using System;
+using System.IO;
 using System.Threading.Tasks;
-using Microsoft.Maui.Controls;
-//using WellnessApp.Database.Repository;
-using WellnessApp.Database.Services;
-using WellnessApp.Items;
 
 namespace WellnessApp
 {
     public partial class ProfilePage : ContentPage
     {
-
         public ProfilePage()
         {
             InitializeComponent();
+        }
+
+        private async void OnProfileImageTapped(object sender, EventArgs e)
+        {
+            var result = await FilePicker.PickAsync(new PickOptions
+            {
+                FileTypes = FilePickerFileType.Images,
+                PickerTitle = "Please select a profile picture"
+            });
+
+            if (result != null)
+            {
+                var stream = await result.OpenReadAsync();
+                ProfileImage.Source = ImageSource.FromStream(() => stream);
+            }
         }
 
         // Navigation button click handlers
@@ -41,7 +52,5 @@ namespace WellnessApp
         {
             await Shell.Current.GoToAsync("//ProfilePage");
         }
-
     }
-
 }
