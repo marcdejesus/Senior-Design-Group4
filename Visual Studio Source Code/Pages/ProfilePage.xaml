@@ -34,6 +34,20 @@
                         </Image.GestureRecognizers>
                     </Image>
                 </Grid>
+                <!-- Bio -->
+                <Label Text="CrunchTimeStudios was founded in 2024. Our offices
+                            are located in PE136 at the Group 4 Table. Professor
+                       Kinnicut is our boss. Thank you for reading our bio."
+                    TextColor="{DynamicResource TextColor}"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Start"
+                    Margin="0,20,0,0"/>
+                <!-- Settings -->
+                <Label Text="Settings"
+                    TextColor="{DynamicResource TextColor}"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Start"
+                    Margin="0,20,0,0"/>
                 <!-- Dark Mode -->
                 <StackLayout Orientation="Horizontal" VerticalOptions="Center">
                     <Label Text="Toggle Dark Mode"
