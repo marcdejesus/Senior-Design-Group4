@@ -7,9 +7,10 @@
         <!-- Main content area -->
         <ScrollView Grid.Row="0">
             <StackLayout Padding="10">
-                <!-- Placeholder for main content like a feed -->
+                <!-- Main Part of Page -->
+               
                 <Label Text="Themes"
-                        FontSize="Medium"
+                        FontSize="Large"
                         HorizontalOptions="Center"
                         VerticalOptions="Center"/>
                 <ListView x:Name="ThemeList" ItemTapped="listView_ItemTapped_Theme">
@@ -25,7 +26,7 @@
                     </ListView.ItemTemplate>
                 </ListView>
                 <Label Text="Categories"
-                        FontSize="Medium"
+                        FontSize="Large"
                         HorizontalOptions="Center"
                         VerticalOptions="Center"/>
                 <ListView x:Name="CategoryList" ItemTapped="listView_ItemTapped_Category">
@@ -41,7 +42,7 @@
                     </ListView.ItemTemplate>
                 </ListView>
                 <Label Text="Goals"
-                        FontSize="Medium"
+                        FontSize="Large"
                         HorizontalOptions="Center"
                         VerticalOptions="Center"/>
                 <ListView x:Name="GoalList" ItemTapped="listView_ItemTapped_Goal">
