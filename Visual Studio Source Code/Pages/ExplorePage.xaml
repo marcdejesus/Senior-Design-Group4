@@ -1,23 +1,25 @@
 ﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WellnessApp.ExplorePage"
-             Title="Explore Page">
+             Title="Explore Page"
+             BackgroundColor="{DynamicResource BackgroundColor}">
 
     <Grid RowDefinitions="*, Auto">
         <!-- Main content area -->
         <ScrollView Grid.Row="0">
             <StackLayout Padding="10">
                 <!-- Placeholder for main content like a feed -->
-                <Label Text="Activity Page"
+                <Label Text="Explore Page (Next Semester)"
                        FontSize="Large"
                        HorizontalOptions="Center"
-                       VerticalOptions="CenterAndExpand"/>
+                       VerticalOptions="CenterAndExpand"
+                       TextColor="{DynamicResource TextColor}"/>
             </StackLayout>
         </ScrollView>
 
         <!-- Bottom Navigation Row -->
         <Grid Grid.Row="2"
-              BackgroundColor="LightGrey"
+              BackgroundColor="{DynamicResource BackgroundColor}"
               Padding="5"
               RowDefinitions="Auto"
               ColumnDefinitions="*,*,*,*">
@@ -29,16 +31,20 @@
                     Grid.Column="0"
                     ImageSource="home_icon.png"
                     HorizontalOptions="Center"
-                    VerticalOptions="Center"/>
+                    VerticalOptions="Center"
+                    BackgroundColor="Grey"
+                    TextColor="{DynamicResource TextColor}"/>
                     
-            <!-- Search Button -->
+            <!-- Calendar Button -->
             <Button Text="Calendar"
                     x:Name="CalendarButton"
                     Clicked="OnCalendarButtonClicked"
                     Grid.Column="1"
                     ImageSource="search_icon.png"
                     HorizontalOptions="Center"
-                    VerticalOptions="Center"/>
+                    VerticalOptions="Center"
+                    BackgroundColor="Grey"
+                    TextColor="{DynamicResource TextColor}"/>
                     
             <!-- Activity Button -->
             <Button Text="Explore"
@@ -47,7 +53,9 @@
                     Grid.Column="2"
                     ImageSource="activity_icon.png"
                     HorizontalOptions="Center"
-                    VerticalOptions="Center"/>
+                    VerticalOptions="Center"
+                    BackgroundColor="Grey"
+                    TextColor="{DynamicResource TextColor}"/>
                     
             <!-- Profile Button -->
             <Button Text="Profile"
@@ -56,7 +64,9 @@
                     Grid.Column="3"
                     ImageSource="profile_icon.png"
                     HorizontalOptions="Center"
-                    VerticalOptions="Center"/>
+                    VerticalOptions="Center"
+                    BackgroundColor="Grey"
+                    TextColor="{DynamicResource TextColor}"/>
         </Grid>
     </Grid>
 </ContentPage>

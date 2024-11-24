@@ -1,7 +1,8 @@
 ﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WellnessApp.ProfilePage"
-             Title="Profile Page">
+             Title="Profile Page"
+             BackgroundColor="{DynamicResource BackgroundColor}">
 
     <Grid RowDefinitions="*, Auto">
         <!-- Main content area -->
@@ -22,20 +23,25 @@
                         </Image.GestureRecognizers>
                     </Image>
                 </Grid>
-
-                <!-- Main Part of Page Text Here -->
-                
-                
+                <!-- Dark Mode -->
+                <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                    <Label Text="Toggle Dark Mode"
+                           TextColor="{DynamicResource TextColor}"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"/>
+                    <Switch x:Name="ThemeSwitch" Toggled="OnThemeSwitchToggled" />
+                </StackLayout>
+                <!-- Add other UI elements here and bind their properties to DynamicResource -->
             </StackLayout>
         </ScrollView>
 
         <!-- Bottom Navigation Row -->
         <Grid Grid.Row="2"
-              BackgroundColor="LightGrey"
+              BackgroundColor="{DynamicResource BackgroundColor}"
               Padding="5"
               RowDefinitions="Auto"
               ColumnDefinitions="*,*,*,*">
-
+              
             <!-- Main/Home Button -->
             <Button Text="Home"
                     x:Name="HomeButton"
@@ -43,8 +49,10 @@
                     Grid.Column="0"
                     ImageSource="home_icon.png"
                     HorizontalOptions="Center"
-                    VerticalOptions="Center"/>
-
+                    VerticalOptions="Center"
+                    BackgroundColor="Grey"
+                    TextColor="{DynamicResource TextColor}"/>
+                    
             <!-- Search Button -->
             <Button Text="Calendar"
                     x:Name="CalendarButton"
@@ -52,8 +60,10 @@
                     Grid.Column="1"
                     ImageSource="search_icon.png"
                     HorizontalOptions="Center"
-                    VerticalOptions="Center"/>
-
+                    VerticalOptions="Center"
+                    BackgroundColor="Grey"
+                    TextColor="{DynamicResource TextColor}"/>
+                    
             <!-- Activity Button -->
             <Button Text="Explore"
                     x:Name="ExploreButton"
@@ -61,8 +71,10 @@
                     Grid.Column="2"
                     ImageSource="activity_icon.png"
                     HorizontalOptions="Center"
-                    VerticalOptions="Center"/>
-
+                    VerticalOptions="Center"
+                    BackgroundColor="Grey"
+                    TextColor="{DynamicResource TextColor}"/>
+                    
             <!-- Profile Button -->
             <Button Text="Profile"
                     x:Name="ProfileButton"
@@ -70,7 +82,9 @@
                     Grid.Column="3"
                     ImageSource="profile_icon.png"
                     HorizontalOptions="Center"
-                    VerticalOptions="Center"/>
+                    VerticalOptions="Center"
+                    BackgroundColor="Grey"
+                    TextColor="{DynamicResource TextColor}"/>
         </Grid>
     </Grid>
 </ContentPage>
