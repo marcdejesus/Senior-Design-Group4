@@ -14,7 +14,7 @@
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Label Text="CrunchTimeStudios          "
+                    <Label Text="CrunchTimeStudios            "
                            TextColor="{DynamicResource TextColor}"
                            VerticalOptions="Center"
                            HorizontalOptions="Start"

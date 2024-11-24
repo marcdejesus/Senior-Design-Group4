@@ -15,8 +15,6 @@ namespace WellnessApp
         public CalendarPage()
         {
             InitializeComponent();
-            SfCalendar calendar = new SfCalendar();
-            Content = calendar;
         }
 
         // Navigation button click handlers

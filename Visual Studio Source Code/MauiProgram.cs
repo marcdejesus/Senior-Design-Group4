@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 //using WellnessApp.Database.Repository;
 using WellnessApp.Database.Services;
+using Syncfusion.Maui.Core.Hosting;
 
 namespace WellnessApp
 {
@@ -11,6 +12,7 @@ namespace WellnessApp
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .ConfigureSyncfusionCore()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

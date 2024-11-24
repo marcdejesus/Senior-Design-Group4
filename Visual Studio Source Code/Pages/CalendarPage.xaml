@@ -2,22 +2,31 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:calendar="clr-namespace:Syncfusion.Maui.Calendar;assembly=Syncfusion.Maui.Calendar"
              x:Class="WellnessApp.CalendarPage"
-             Title="Calendar Page">
+             Title="Calendar Page"
+             BackgroundColor="{DynamicResource BackgroundColor}">
 
-    <Grid RowDefinitions="*, Auto">
+     <Grid RowDefinitions="Auto, *, Auto">
+        <!-- Calendar area -->
+        <calendar:SfCalendar x:Name="calendar"
+                             Grid.Row="0"
+                             View="Month"
+                             CornerRadius="15"
+                             HeightRequest="200">
+        </calendar:SfCalendar>
+
         <!-- Main content area -->
-        <Grid Grid.Row="0">
-            
-           <calendar:SfCalendar x:Name="calendar"
-                View="Month"
-                CornerRadius="15">
-           </calendar:SfCalendar>
-           
+        <Grid Grid.Row="1">
+            <!-- Add other content here -->
+            <Label Text="The Calendar Page is under construction. Please check back later."
+                    TextColor="{DynamicResource TextColor}"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Start"
+                    Margin="0,20,0,0"/>
         </Grid>
 
         <!-- Bottom Navigation Row -->
         <Grid Grid.Row="2"
-              BackgroundColor="LightGrey"
+              BackgroundColor="{DynamicResource BackgroundColor}"
               Padding="5"
               RowDefinitions="Auto"
               ColumnDefinitions="*,*,*,*">
@@ -29,7 +38,9 @@
                     Grid.Column="0"
                     ImageSource="home_icon.png"
                     HorizontalOptions="Center"
-                    VerticalOptions="Center"/>
+                    VerticalOptions="Center"
+                    BackgroundColor="Grey"
+                    TextColor="{DynamicResource TextColor}"/>
                     
             <!-- Search Button -->
             <Button Text="Calendar"
@@ -38,7 +49,9 @@
                     Grid.Column="1"
                     ImageSource="search_icon.png"
                     HorizontalOptions="Center"
-                    VerticalOptions="Center"/>
+                    VerticalOptions="Center"
+                    BackgroundColor="Grey"
+                    TextColor="{DynamicResource TextColor}"/>
                     
             <!-- Activity Button -->
             <Button Text="Explore"
@@ -47,7 +60,9 @@
                     Grid.Column="2"
                     ImageSource="activity_icon.png"
                     HorizontalOptions="Center"
-                    VerticalOptions="Center"/>
+                    VerticalOptions="Center"
+                    BackgroundColor="Grey"
+                    TextColor="{DynamicResource TextColor}"/>
                     
             <!-- Profile Button -->
             <Button Text="Profile"
@@ -56,7 +71,9 @@
                     Grid.Column="3"
                     ImageSource="profile_icon.png"
                     HorizontalOptions="Center"
-                    VerticalOptions="Center"/>
+                    VerticalOptions="Center"
+                    BackgroundColor="Grey"
+                    TextColor="{DynamicResource TextColor}"/>
         </Grid>
     </Grid>
 </ContentPage>
