@@ -184,6 +184,21 @@ namespace WellnessApp.Database.Services
 
         }
 
+        public async Task AddCategoryToCompleted(Category category)
+        {
+            Category updatedCategory = new Category
+            {
+                CategoryId = category.CategoryId,
+                Name = category.Name,
+                Description = category.Description,
+                ParentThemeId = category.ParentThemeId,
+                Status = "Completed",
+                Days = category.Days
+            };
+
+            await UpdateCategory(updatedCategory);
+        }
+
         // Goal Methods
         public Task<List<Goal>> GetGoals()
         {

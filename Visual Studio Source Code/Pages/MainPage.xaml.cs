@@ -16,8 +16,13 @@ using WellnessApp.Items;
         {
             _databaseService = databaseService;
             InitializeComponent();
-            LoadCategories();
             CategoryList.ItemTapped += OnCategoryTapped;
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            LoadCategories();
         }
 
         private async Task LoadCategories()

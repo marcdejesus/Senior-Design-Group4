@@ -18,7 +18,7 @@ namespace WellnessApp
             set
             {
                 _categoryId = value;
-                LoadGoals();
+                //LoadGoals();
             }
         }
 
@@ -42,6 +42,17 @@ namespace WellnessApp
                 var categoryGoals = allGoals.Where(g => g.ParentCatId == CategoryId).ToList();
                 GoalList.ItemsSource = categoryGoals;
                 Console.WriteLine($"{categoryGoals.Count} goals loaded for category {CategoryId}.");
+
+                if (categoryGoals.Count() == 0)
+                {
+                    foreach (var category in await _databaseService.GetCategories())
+                    {
+                        if (category.CategoryId == CategoryId) 
+                        { 
+                            _databaseService.AddCategoryToCompleted(category);
+                        }
+                    }
+                }
             }
             catch (Exception ex)
             {
