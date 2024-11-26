@@ -8,7 +8,5 @@ namespace WellnessApp
         {
             InitializeComponent();
         }
-
-        
     }
 }
