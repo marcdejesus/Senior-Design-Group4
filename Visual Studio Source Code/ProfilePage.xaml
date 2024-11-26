@@ -1,0 +1,126 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WellnessApp.ProfilePage"
+             Title="Profile Page"
+             BackgroundColor="{DynamicResource BackgroundColor}">
+
+    <Grid RowDefinitions="*, Auto">
+        <!-- Main content area -->
+        <ScrollView Grid.Row="0">
+            <StackLayout Padding="10">
+                <!-- Circular Profile Picture and Username -->
+                <Grid HorizontalOptions="End" VerticalOptions="Start" Padding="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="CrunchTimeStudios            "
+                           TextColor="{DynamicResource TextColor}"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Start"
+                           Grid.Column="0"
+                           Margin="10,0,0,0"/>
+                    <Image x:Name="ProfileImage"
+                           Source="example_pfp.webp"
+                           WidthRequest="100"
+                           HeightRequest="100"
+                           Aspect="AspectFill"
+                           Grid.Column="1">
+                        <Image.Clip>
+                            <EllipseGeometry Center="50,50" RadiusX="50" RadiusY="50"/>
+                        </Image.Clip>
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnProfileImageTapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Grid>
+                <!-- Bio -->
+                <Label Text="CrunchTimeStudios was founded in 2024. Our offices
+                            are located in PE136 at the Group 4 Table. Professor
+                       Kinnicut is our boss. Thank you for reading our bio."
+                    TextColor="{DynamicResource TextColor}"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Start"
+                    Margin="0,20,0,0"/>
+                <!-- Settings -->
+                <Label Text="Settings"
+                    TextColor="{DynamicResource TextColor}"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Start"
+                    Margin="0,20,0,0"/>
+                <!-- Dark Mode -->
+                <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                    <Label Text="Toggle Dark Mode"
+                           TextColor="{DynamicResource TextColor}"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"/>
+                    <Switch x:Name="ThemeSwitch" Toggled="OnThemeSwitchToggled" />
+                </StackLayout>
+                <!-- Add other UI elements here and bind their properties to DynamicResource -->
+            </StackLayout>
+        </ScrollView>
+
+        <!-- Bottom Navigation Row -->
+        <Grid Grid.Row="2"
+              BackgroundColor="{DynamicResource BackgroundColor}"
+              Padding="5"
+              RowDefinitions="Auto"
+              ColumnDefinitions="*,*,*,*,*">
+              
+            <!-- Main/Home Button -->
+            <Button Text="Home"
+                    x:Name="HomeButton"
+                    Clicked="OnHomeButtonClicked"
+                    Grid.Column="0"
+                    ImageSource="home_icon.png"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    BackgroundColor="Grey"
+                    TextColor="{DynamicResource TextColor}"/>
+            
+            <!-- Search Button -->
+            <Button Text="Calendar"
+                    x:Name="CalendarButton"
+                    Clicked="OnCalendarButtonClicked"
+                    Grid.Column="1"
+                    ImageSource="search_icon.png"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    BackgroundColor="Grey"
+                    TextColor="{DynamicResource TextColor}"/>
+                    
+            <!-- Activity Button -->
+            <Button Text="Explore"
+                    x:Name="ExploreButton"
+                    Clicked="OnExploreButtonClicked"
+                    Grid.Column="2"
+                    ImageSource="activity_icon.png"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    BackgroundColor="Grey"
+                    TextColor="{DynamicResource TextColor}"/>
+                    
+            <!-- Profile Button -->
+            <Button Text="Profile"
+                    x:Name="ProfileButton"
+                    Clicked="OnProfileButtonClicked"
+                    Grid.Column="3"
+                    ImageSource="profile_icon.png"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    BackgroundColor="Grey"
+                    TextColor="{DynamicResource TextColor}"/>
+
+            <!-- LogIn Button -->
+            <Button Text="Log In/Sign Up"
+                    x:Name="LoginButton"
+                    Clicked="OnLoginButtonClicked"
+                    Grid.Column="4"
+                    ImageSource="Login_Icon.png"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    BackgroundColor="Grey"
+                    TextColor="{DynamicResource TextColor}"/>
+        </Grid>
+    </Grid>
+</ContentPage>

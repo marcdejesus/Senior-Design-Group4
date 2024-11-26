@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WellnessApp.SignUpPage"
+             Title="Sign Up"
+             BackgroundColor="{DynamicResource BackgroundColor}">
+
+
+    <Grid RowDefinitions="*, Auto">
+        <!-- Main content area -->
+        <ScrollView Grid.Row="0">
+            <StackLayout Padding="10">
+                
+            </StackLayout>
+        </ScrollView>
+
+        <!-- Bottom Navigation Row -->
+        <Grid Grid.Row="2"
+          BackgroundColor="{DynamicResource BackgroundColor}"
+          Padding="5"
+          RowDefinitions="Auto"
+          ColumnDefinitions="*,*,*,*">
+
+            <!-- Main/Home Button -->
+            <Button Text="Home"
+                x:Name="HomeButton"
+                Clicked="OnHomeButtonClicked"
+                Grid.Column="0"
+                ImageSource="home_icon.png"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                BackgroundColor="Grey"
+                TextColor="{DynamicResource TextColor}"/>
+
+            <!-- Search Button -->
+            <Button Text="Calendar"
+                x:Name="CalendarButton"
+                Clicked="OnCalendarButtonClicked"
+                Grid.Column="1"
+                ImageSource="search_icon.png"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                BackgroundColor="Grey"
+                TextColor="{DynamicResource TextColor}"/>
+
+            <!-- Activity Button -->
+            <Button Text="Explore"
+                x:Name="ExploreButton"
+                Clicked="OnExploreButtonClicked"
+                Grid.Column="2"
+                ImageSource="activity_icon.png"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                BackgroundColor="Grey"
+                TextColor="{DynamicResource TextColor}"/>
+
+            <!-- Profile Button -->
+            <Button Text="Profile"
+                x:Name="ProfileButton"
+                Clicked="OnProfileButtonClicked"
+                Grid.Column="3"
+                ImageSource="profile_icon.png"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                BackgroundColor="Grey"
+                TextColor="{DynamicResource TextColor}"/>
+        </Grid>
+    </Grid>
+</ContentPage>
