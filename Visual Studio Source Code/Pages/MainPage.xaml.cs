@@ -6,58 +6,45 @@ using Microsoft.Maui.Controls;
 using WellnessApp.Database.Services;
 using WellnessApp.Items;
 
-namespace WellnessApp
+   namespace WellnessApp
 {
     public partial class MainPage : ContentPage
     {
-
         private readonly DatabaseService _databaseService;
 
         public MainPage(DatabaseService databaseService)
         {
             _databaseService = databaseService;
-
             InitializeComponent();
-
-            //LoadThemes();
+            LoadCategories();
+            CategoryList.ItemTapped += OnCategoryTapped;
         }
 
-        private async Task LoadThemes()
+        private async Task LoadCategories()
         {
             try
             {
-                // Get themes asynchronously
-                List<Theme> themes = await _databaseService.GetThemes();
-
-                // Check if themes are null or empty
-                if (themes == null || themes.Count == 0)
-                {
-                    Console.WriteLine("No themes found.");
-                    return;
-                }
-
-                // Update the UI
-                ThemeList.ItemsSource = themes;
-                Console.WriteLine($"{themes.Count} themes loaded.");
+                List<Category> categories = await _databaseService.GetActiveCategories();
+                CategoryList.ItemsSource = categories;
+                Console.WriteLine($"{categories.Count} categories loaded.");
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error loading themes: {ex.Message}");
+                Console.WriteLine($"Error loading categories: {ex.Message}");
             }
         }
 
-        //public async void ShowThemesClicked(object sender, EventArgs e)
-        //{
-        //    Console.WriteLine("Button Clicked!");
-        //    try
-        //    {
-        //        await LoadThemes();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Console.WriteLine($"Error in ShowThemesClicked: {ex.Message}");
-        //    }
-        //}
+        private async void OnCategoryTapped(object sender, ItemTappedEventArgs e)
+        {
+            if (e.Item is Category category)
+            {
+                await Shell.Current.GoToAsync($"//GoalPage?CategoryId={category.CategoryId}");
+                // Deselect the item
+                ((ListView)sender).SelectedItem = null;
+            }
+        }
+
+
 
         // Navigation button click handlers
         private async void OnHomeButtonClicked(object sender, EventArgs e)
@@ -85,14 +72,14 @@ namespace WellnessApp
             await Shell.Current.GoToAsync("//ProfilePage");
         }
 
-        private async void OnGoalButtonClicked(object sender, EventArgs e)
-        {
+        //private async void OnGoalButtonClicked(object sender, EventArgs e)
+        //{
             //var navParam = new Dictionary<string, object>
             //{
             //    {"_databaseService", _databaseService }
             //};
-            await Shell.Current.GoToAsync("//GoalPage");
-        }
+            //await Shell.Current.GoToAsync("//GoalPage");
+        //}
 
         private async void OnCompletedButtonClicked(object sender, EventArgs e)
         {

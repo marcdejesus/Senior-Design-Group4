@@ -141,6 +141,11 @@ namespace WellnessApp.Database.Services
             return await _database.Table<Category>().Where(t => t.Status == "Inactive").ToListAsync();
         }
 
+        public async Task<List<Category>> GetActiveCategories()
+        {
+            return await _database.Table<Category>().Where(t => t.Status == "Active").ToListAsync();
+        }
+
         public async Task UpdateCategory(Category category)
         {
             await _database.UpdateAsync(category);
