@@ -24,6 +24,8 @@ moq by moq (make sure this one is loaded into the unit testing project as well)
 
 Syncfusion.Maui.Calendar by Syncfusion.inc
 
+Syncfusion.Maui.DataForm by Syncfusion.inc
+
 Now that you have installed the necessary packages, straight up delete all of the .cs and .xaml files from the solution explorer, don't worry, we'll be replacing them shortly!
 
 Next, copy in the .cs files from the 'Visual Studio Source Code' folder in the GitHub repository (only the .cs files, not the .xaml.cs files, mind you).
