@@ -29,11 +29,11 @@
                 </ListView>
                 <Button Text="Add New"
                         Clicked="OnAddButtonClicked"
-                        BackgroundColor="Grey"
+                        BackgroundColor="Gray"
                         TextColor="{DynamicResource TextColor}"/>
                 <Button Text="View Completed"
                         Clicked="OnCompletedButtonClicked"
-                        BackgroundColor="Grey"
+                        BackgroundColor="Gray"
                         TextColor="{DynamicResource TextColor}"/>
 
                 <ListView x:Name="ThemeList"
