@@ -34,6 +34,8 @@ namespace WellnessApp
             builder.Services.AddTransient<CalendarPage>();
             builder.Services.AddTransient<ProfilePage>();
             builder.Services.AddTransient<ExplorePage>();
+            builder.Services.AddTransient<SignUpPage>();
+            builder.Services.AddTransient<LoginPage>();
 
 
 #if DEBUG

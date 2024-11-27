@@ -65,7 +65,7 @@
               BackgroundColor="{DynamicResource BackgroundColor}"
               Padding="5"
               RowDefinitions="Auto"
-              ColumnDefinitions="*,*,*,*">
+              ColumnDefinitions="*,*,*,*,*">
               
             <!-- Main/Home Button -->
             <Button Text="Home"
@@ -106,6 +106,17 @@
                     Clicked="OnProfileButtonClicked"
                     Grid.Column="3"
                     ImageSource="profile_icon.png"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    BackgroundColor="Grey"
+                    TextColor="{DynamicResource TextColor}"/>
+
+            <!-- LogIn Button -->
+            <Button Text="Log In/Sign Up"
+                    x:Name="LoginButton"
+                    Clicked="OnLoginButtonClicked"
+                    Grid.Column="4"
+                    ImageSource="Login_Icon.png"
                     HorizontalOptions="Center"
                     VerticalOptions="Center"
                     BackgroundColor="Grey"

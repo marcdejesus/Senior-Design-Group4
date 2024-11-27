@@ -35,4 +35,12 @@
         Title="CompletedGoalPage"
         ContentTemplate="{DataTemplate local:CompletedGoalPage}"
         Route="CompletedGoalPage"/>
+    <ShellContent
+        Title="LoginPage"
+        ContentTemplate="{DataTemplate local:LoginPage}"
+        Route="LoginPage"/>
+    <ShellContent
+        Title="SignUpPage"
+        ContentTemplate="{DataTemplate local:SignUpPage}"
+        Route="SignUpPage"/>
 </Shell>

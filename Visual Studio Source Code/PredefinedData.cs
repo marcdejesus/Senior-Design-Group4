@@ -13,17 +13,17 @@ namespace WellnessApp.Database.Services
         // Predefined Theme data
         public static List<Theme> Themes => new List<Theme>
         {
-            new Theme { ThemeId = 1, Name = "Fitness", Description = "", Status = "Active"},
+            new Theme { ThemeId = 1, Name = "Fitness", Description = "", Status = "Inactive"},
             new Theme { ThemeId = 2, Name = "Studying", Description = "", Status = "Inactive" },
             new Theme { ThemeId = 3, Name = "Language", Description = "", Status = "Inactive" },
-            new Theme { ThemeId = 4, Name = "Instrument", Description = "", Status = "Active"},
+            new Theme { ThemeId = 4, Name = "Instrument", Description = "", Status = "Inactive"},
             new Theme { ThemeId = 5, Name = "Mental Health", Description = "", Status = "Inactive" }
         };
 
         // Predefined Category data
         public static List<Category> Categories => new List<Category>
         {
-            new Category { CategoryId = 1, Name = "Strength Training", Description = "", ParentThemeId = 1, Status = "Active" },
+            new Category { CategoryId = 1, Name = "Strength Training", Description = "", ParentThemeId = 1, Status = "Inactive" },
             new Category { CategoryId = 2, Name = "Endurance Training", Description = "", ParentThemeId = 1, Status = "Inactive" },
             new Category { CategoryId = 3, Name = "Fliexibility Training", Description = "", ParentThemeId = 1, Status = "Inactive" },
 
