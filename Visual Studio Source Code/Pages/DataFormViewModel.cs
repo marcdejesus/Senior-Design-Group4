@@ -9,7 +9,10 @@ namespace WellnessApp{
             this.LoginFormModel = new LoginFormModel
             {
                 Email = string.Empty,
-                Password = string.Empty
+                Password = string.Empty,
+                First_Name = string.Empty,
+                Last_Name = string.Empty,
+                dob = string.Empty
             };
         }
 

@@ -13,12 +13,12 @@ namespace WellnessApp {
         /// <summary>
         /// Holds the data form object.
         /// </summary>
-        private SfDataForm dataForm;
+        private SfDataForm? dataForm;
 
         /// <summary>
         /// Holds the login button instance.
         /// </summary>
-        private Button loginButton;
+        private Button? loginButton;
 
         protected override void OnAttachedTo(ContentPage bindable)
         {
@@ -39,11 +39,32 @@ namespace WellnessApp {
         /// </summary>
         /// <param name="sender">The data form.</param>
         /// <param name="e">The event arguments.</param>
-        private void OnGenerateDataFormItem(object sender, GenerateDataFormItemEventArgs e)
+        private void OnGenerateDataFormItem(object? sender, GenerateDataFormItemEventArgs e)
         {
-            if (e.DataFormItem != null && e.DataFormItem.FieldName == nameof(LoginFormModel.Email) && e.DataFormItem is DataFormTextEditorItem textItem)
+            if (e.DataFormItem != null)
             {
-                textItem.Keyboard = Keyboard.Email;
+                if (e.DataFormItem is DataFormTextEditorItem textItem)
+                {
+                    // Customize the editor to set the text color to white
+                    textItem.EditorTextStyle = new DataFormTextStyle { TextColor = Colors.White };
+
+                    if (e.DataFormItem.FieldName == nameof(LoginFormModel.Email))
+                    {
+                        textItem.Keyboard = Keyboard.Email;
+                    }
+                    else if (e.DataFormItem.FieldName == nameof(LoginFormModel.Password))
+                    {
+                        textItem.Keyboard = Keyboard.Text; // or Keyboard.Default for password
+                    }
+                    else if (e.DataFormItem.FieldName == nameof(LoginFormModel.Email) ||
+                             e.DataFormItem.FieldName == nameof(LoginFormModel.Password) ||
+                            e.DataFormItem.FieldName == nameof(LoginFormModel.First_Name) ||
+                             e.DataFormItem.FieldName == nameof(LoginFormModel.Last_Name) ||
+                             e.DataFormItem.FieldName == nameof(LoginFormModel.dob))
+                    {
+                        textItem.Keyboard = Keyboard.Text;
+                    }
+                }
             }
         }
 
@@ -52,7 +73,7 @@ namespace WellnessApp {
         /// </summary>
         /// <param name="sender">The login button.</param>
         /// <param name="e">The event arguments.</param>
-        private async void OnLoginButtonCliked(object sender, EventArgs e)
+        private async void OnLoginButtonCliked(object? sender, EventArgs e)
         {
             if (this.dataForm != null && App.Current?.MainPage != null)
             {
