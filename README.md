@@ -1,4 +1,4 @@
-So, you want to get the files from the GutHub to do development on them? Here's how you do that!
+So, you want to get the files from the GitHub to do development on them? Here's how you do that!
 
 First, you'll want your own local project where you can conduct your work. Visual Studio projects are very large, so we can't upload the entire project folder to GitHub.
 
