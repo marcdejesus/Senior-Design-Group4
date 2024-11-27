@@ -56,6 +56,16 @@
                            HorizontalOptions="Center"/>
                     <Switch x:Name="ThemeSwitch" Toggled="OnThemeSwitchToggled" />
                 </StackLayout>
+                <!-- LogIn Button -->
+                <Button Text="Log In/Sign Up"
+                    x:Name="LoginButton"
+                    Clicked="OnLoginButtonClicked"
+                    Grid.Column="4"
+                    ImageSource="Login_Icon.png"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    BackgroundColor="Grey"
+                    TextColor="{DynamicResource TextColor}"/>
                 <!-- Add other UI elements here and bind their properties to DynamicResource -->
             </StackLayout>
         </ScrollView>
@@ -65,7 +75,7 @@
               BackgroundColor="{DynamicResource BackgroundColor}"
               Padding="5"
               RowDefinitions="Auto"
-              ColumnDefinitions="*,*,*,*,*">
+              ColumnDefinitions="*,*,*,*">
               
             <!-- Main/Home Button -->
             <Button Text="Home"
@@ -111,16 +121,6 @@
                     BackgroundColor="Grey"
                     TextColor="{DynamicResource TextColor}"/>
 
-            <!-- LogIn Button -->
-            <Button Text="Log In/Sign Up"
-                    x:Name="LoginButton"
-                    Clicked="OnLoginButtonClicked"
-                    Grid.Column="4"
-                    ImageSource="Login_Icon.png"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    BackgroundColor="Grey"
-                    TextColor="{DynamicResource TextColor}"/>
         </Grid>
     </Grid>
 </ContentPage>
