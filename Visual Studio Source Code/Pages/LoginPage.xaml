@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:thickness="clr-namespace:Microsoft.Maui;assembly=Microsoft.Maui"
+             xmlns:dataForm="clr-namespace:Syncfusion.Maui.DataForm;assembly=Syncfusion.Maui.DataForm"
+             xmlns:local="clr-namespace:WellnessApp"
+             xmlns:system="clr-namespace:System;assembly=netstandard"
+             x:Class="WellnessApp.LoginPage"
+             Title="Login Page">
+
+    <ContentPage.BindingContext>
+        <local:DataFormViewModel/>
+    </ContentPage.BindingContext>
+
+    <Grid RowDefinitions="Auto,*,Auto,Auto,Auto" ColumnDefinitions="*">
+        <!-- Image and Border -->
+        <Border Grid.Row="0" Stroke="Transparent" BackgroundColor="{OnIdiom Phone=#83E9EE, Desktop=Transparent}">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="0,0,100,100"/>
+            </Border.StrokeShape>
+            <Image Source="login.png" HorizontalOptions="Center" Aspect="AspectFit"/>
+        </Border>
+
+        <!-- Data Form -->
+        <dataForm:SfDataForm x:Name="loginForm" DataObject="{Binding LoginFormModel}" LayoutType="TextInputLayout" ValidationMode="PropertyChanged" Grid.Row="1"/>
+
+        <!-- Remember Me and Forgot Password -->
+        <Grid ColumnDefinitions="0.5*,0.5*" Grid.Row="2" Padding="12,0,0,0" VerticalOptions="Start">
+            <HorizontalStackLayout VerticalOptions="Center" Padding="10,0,0,0">
+                <CheckBox Color="{StaticResource Primary}"/>
+                <Label Text="Remember me" FontSize="12" VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+            <Label Text="Forgot password?" Grid.Column="1" TextColor="{StaticResource Primary}" HorizontalTextAlignment="Center" Padding="10,0,0,0" FontSize="12" VerticalOptions="Center"/>
+        </Grid>
+
+        <!-- Login Button -->
+        <Button Text="LOGIN" x:Name="loginButton" HeightRequest="40" VerticalOptions="End" HorizontalOptions="Fill" Margin="20,0,20,0" CornerRadius="10" Padding="0" FontAttributes="Bold" Grid.Row="3" BackgroundColor="{StaticResource Primary}"/>
+
+        <!-- Sign Up Label -->
+        <Label Grid.Row="4" Padding="0,12,0,0" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="14">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Don't have an account?   "/>
+                    <Span Text="Sign Up" TextDecorations="Underline" TextColor="{StaticResource Primary}"/>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+    </Grid>
+
+    <ContentPage.Behaviors>
+        <local:LoginFormBehavior/>
+    </ContentPage.Behaviors>
+</ContentPage>
