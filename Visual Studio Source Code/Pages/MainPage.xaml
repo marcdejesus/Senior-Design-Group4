@@ -8,10 +8,25 @@
         <!-- Main content area -->
         <ScrollView Grid.Row="0">
             <StackLayout Padding="20" Spacing="10" Orientation="Vertical">
-                <Button Text="View Current"
-                        Clicked="OnGoalButtonClicked"
-                        BackgroundColor="Grey"
-                        TextColor="{DynamicResource TextColor}"/>
+                <!-- Replace the "View Current" button with: -->
+                <ListView x:Name="CategoryList" BackgroundColor="{DynamicResource BackgroundColor}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Padding="10">
+                                    <Label Text="{Binding Name}" 
+                                        TextColor="{DynamicResource TextColor}"
+                                        FontSize="Medium"
+                                        HorizontalOptions="Center"/>
+                                    <Label Text="{Binding Description}" 
+                                        TextColor="{DynamicResource TextColor}"
+                                        FontSize="Small"
+                                        HorizontalOptions="Center"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
                 <Button Text="Add New"
                         Clicked="OnAddButtonClicked"
                         BackgroundColor="Grey"

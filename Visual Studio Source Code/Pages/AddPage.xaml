@@ -9,30 +9,6 @@
         <ScrollView Grid.Row="0">
             <StackLayout Padding="10">
                 <!-- Main Part of Page -->
-                <Label Text="Themes"
-                       FontSize="Large"
-                       HorizontalOptions="Center"
-                       VerticalOptions="Center"
-                       TextColor="{DynamicResource TextColor}"/>
-                <ListView x:Name="ThemeList" ItemTapped="listView_ItemTapped_Theme"
-                          BackgroundColor="{DynamicResource BackgroundColor}">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <StackLayout Padding="10">
-                                    <Label Text="{Binding Name}" 
-                                           Margin="10" 
-                                           HorizontalOptions="Center"
-                                           TextColor="{DynamicResource TextColor}"/>
-                                    <Label Text="{Binding Description}" 
-                                           Margin="10" 
-                                           HorizontalOptions="Center"
-                                           TextColor="{DynamicResource TextColor}"/>
-                                </StackLayout>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
                 <Label Text="Categories"
                        FontSize="Large"
                        HorizontalOptions="Center"
@@ -49,30 +25,6 @@
                                            HorizontalOptions="Center"
                                            TextColor="{DynamicResource TextColor}"/>
                                     <Label Text="{Binding Description}" 
-                                           Margin="10" 
-                                           HorizontalOptions="Center"
-                                           TextColor="{DynamicResource TextColor}"/>
-                                </StackLayout>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-                <Label Text="Goals"
-                       FontSize="Large"
-                       HorizontalOptions="Center"
-                       VerticalOptions="Center"
-                       TextColor="{DynamicResource TextColor}"/>
-                <ListView x:Name="GoalList" ItemTapped="listView_ItemTapped_Goal"
-                          BackgroundColor="{DynamicResource BackgroundColor}">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <StackLayout Padding="10">
-                                    <Label Text="{Binding Description}" 
-                                           Margin="10" 
-                                           HorizontalOptions="Center"
-                                           TextColor="{DynamicResource TextColor}"/>
-                                    <Label Text="{Binding Name}" 
                                            Margin="10" 
                                            HorizontalOptions="Center"
                                            TextColor="{DynamicResource TextColor}"/>
